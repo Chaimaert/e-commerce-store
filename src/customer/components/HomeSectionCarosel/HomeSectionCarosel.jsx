@@ -7,13 +7,16 @@ const HomeSectionCarosel = () => {
   const responsive = {
     0: { items: 1 },
     568: { items: 3 },
-    1024: { items: 4 },
+    1024: { items: 5.5 },
   };
 
   const items = [1, 1, 1, 1, 1].map((items) => <HomeSectionCard />);
 
   return (
     <div>
+      <div>
+        <AliceCarousel />
+      </div>
       <AliceCarousel
         items={items}
         responsive={responsive}
