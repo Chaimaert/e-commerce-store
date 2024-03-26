@@ -2,6 +2,7 @@ import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 
 const HomeSectionCarosel = () => {
   const responsive = {
@@ -13,18 +14,22 @@ const HomeSectionCarosel = () => {
   const items = [1, 1, 1, 1, 1].map((items) => <HomeSectionCard />);
 
   return (
-    <div>
-      <div>
+    <div className="relative px-4 lg:px-8">
+      <div className="relative p-5">
         <AliceCarousel />
+        <AliceCarousel
+          items={items}
+          responsive={responsive}
+          disableButtonsControls
+          infinite
+        />
+        <button
+          className="z-50 absolute top-1/2 -right-4 transform -translate-y-1/2"
+          aria-label="next"
+        >
+          <KeyboardDoubleArrowLeftIcon sx={{transform:"rotate(180deg)"}} />
+        </button>
       </div>
-      <AliceCarousel
-        items={items}
-        responsive={responsive}
-        disableButtonsControls
-        autoPlay
-        autoPlayInterval={1000}
-        infinite
-      />
     </div>
   );
 };
