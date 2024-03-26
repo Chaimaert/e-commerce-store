@@ -3,6 +3,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 const HomeSectionCarosel = () => {
   const responsive = {
@@ -14,20 +15,25 @@ const HomeSectionCarosel = () => {
   const items = [1, 1, 1, 1, 1].map((items) => <HomeSectionCard />);
 
   return (
-    <div className="relative px-4 lg:px-8">
+    <div className="px-4 lg:px-8 border">
       <div className="relative p-5">
-        <AliceCarousel />
         <AliceCarousel
           items={items}
           responsive={responsive}
-          disableButtonsControls
-          infinite
+          disableDotsControls
         />
         <button
-          className="z-50 absolute top-1/2 -right-4 transform -translate-y-1/2"
+          className="z-50 absolute top-1/2 -right-3 transform -translate-y-1/2"
           aria-label="next"
         >
-          <KeyboardDoubleArrowLeftIcon sx={{transform:"rotate(180deg)"}} />
+          <KeyboardDoubleArrowLeftIcon sx={{ transform: "rotate(180deg)" }} />
+        </button>
+
+        <button
+                    className="z-50 absolute top-1/2 left-1 transform -translate-y-1/2"
+                    aria-label="previous"
+        >
+          <KeyboardDoubleArrowRightIcon sx={{ transform: "rotate(180deg)" }} />
         </button>
       </div>
     </div>
