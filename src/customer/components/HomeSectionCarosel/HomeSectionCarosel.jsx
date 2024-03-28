@@ -12,7 +12,7 @@ const HomeSectionCarosel = () => {
     1024: { items: 5.5 },
   };
 
-  const items = [1, 1, 1, 1, 1].map((items) => <HomeSectionCard />);
+  const items = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((items) => <HomeSectionCard />);
 
   return (
     <div className="px-4 lg:px-8 border">
