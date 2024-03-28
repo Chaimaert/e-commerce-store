@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
@@ -6,6 +6,7 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 const HomeSectionCarosel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const responsive = {
     0: { items: 1 },
@@ -13,7 +14,14 @@ const HomeSectionCarosel = () => {
     1024: { items: 4.8 },
   };
 
-  const items = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((items) => <HomeSectionCard />);
+  const slidePrev = () => setActiveIndex(activeIndex - 1);
+  const slideNext = () => setActiveIndex(activeIndex + 1);
+
+  const syncActiveIndex = ({ item }) => setActiveIndex(item);
+
+  const items = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((items) => (
+    <HomeSectionCard />
+  ));
 
   return (
     <div className="border ">
@@ -24,17 +32,21 @@ const HomeSectionCarosel = () => {
           infinite
           responsive={responsive}
           disableDotsControls
+          onSlideChanged={syncActiveIndex}
+          activeIndex={activeIndex}
         />
-        <button
+        {activeIndex !== items.length-5 &&  <button
+          onClick={slideNext}
           className="z-50 absolute top-1/2 -right-3.5 transform -translate-y-1/2"
           aria-label="next"
         >
           <KeyboardDoubleArrowLeftIcon sx={{ transform: "rotate(180deg)" }} />
-        </button>
+        </button>}
 
         <button
-                    className="z-50 absolute top-1/2 -left-3 transform -translate-y-1/2"
-                    aria-label="previous"
+          onClick={slidePrev}
+          className="z-50 absolute top-1/2 -left-3 transform -translate-y-1/2"
+          aria-label="previous"
         >
           <KeyboardDoubleArrowRightIcon sx={{ transform: "rotate(180deg)" }} />
         </button>
