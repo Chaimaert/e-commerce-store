@@ -6,31 +6,34 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 const HomeSectionCarosel = () => {
+
   const responsive = {
     0: { items: 1 },
-    568: { items: 3 },
-    1024: { items: 5.5 },
+    720: { items: 3 },
+    1024: { items: 4.5 },
   };
 
   const items = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((items) => <HomeSectionCard />);
 
   return (
-    <div className="px-4 lg:px-8 border">
+    <div className="border ">
       <div className="relative p-5">
         <AliceCarousel
           items={items}
+          disableButtonsControls
+          infinite
           responsive={responsive}
           disableDotsControls
         />
         <button
-          className="z-50 absolute top-1/2 -right-3 transform -translate-y-1/2"
+          className="z-50 absolute top-1/2 -right-3.5 transform -translate-y-1/2"
           aria-label="next"
         >
           <KeyboardDoubleArrowLeftIcon sx={{ transform: "rotate(180deg)" }} />
         </button>
 
         <button
-                    className="z-50 absolute top-1/2 left-1 transform -translate-y-1/2"
+                    className="z-50 absolute top-1/2 -left-3 transform -translate-y-1/2"
                     aria-label="previous"
         >
           <KeyboardDoubleArrowRightIcon sx={{ transform: "rotate(180deg)" }} />
