@@ -4,11 +4,12 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import men from '../../../Data/men';
-
+import men from "../../../Data/men";
 
 const HomeSectionCarosel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevDisabled, setPrevDisabled] = useState(true);
+  const [nextDisabled, setNextDisabled] = useState(false);
 
   const responsive = {
     0: { items: 1 },
@@ -16,40 +17,67 @@ const HomeSectionCarosel = () => {
     1024: { items: 4.8 },
   };
 
-  const slidePrev = () => setActiveIndex(activeIndex - 1);
-  const slideNext = () => setActiveIndex(activeIndex + 1);
+  const handleOnSlideChanged = ({ item }) => {
+    setCurrentIndex(item);
+    setPrevDisabled(item === 0);
+    setNextDisabled(item === men.length - 5);
+  };
 
-  const syncActiveIndex = ({ item }) => setActiveIndex(item);
+  const slidePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      setNextDisabled(false);
+    }
+    if (currentIndex === 1) {
+      setPrevDisabled(true);
+    }
+  };
 
-  const items = men.slice(0,10).map((items) => (
-    <HomeSectionCard product={items} />
-  ));
+  const slideNext = () => {
+    if (currentIndex < men.length - 5) {
+      setCurrentIndex(currentIndex + 1);
+      setPrevDisabled(false);
+    }
+    if (currentIndex === men.length - 6) {
+      setNextDisabled(true);
+    }
+  };
+
+  const items = men
+    .slice(currentIndex, currentIndex + 5)
+    .map((item) => <HomeSectionCard key={item.title} product={item} />);
 
   return (
-    <div className="border ">
+    <div className="border">
       <div className="relative p-5">
         <AliceCarousel
           items={items}
           disableButtonsControls
           responsive={responsive}
           disableDotsControls
-          onSlideChanged={syncActiveIndex}
-          activeIndex={activeIndex}
+          onSlideChanged={handleOnSlideChanged}
+          startIndex={currentIndex}
         />
-        {activeIndex !== items.length-5 &&  <button
-          onClick={slideNext}
-          className="z-50 absolute top-1/2 -right-3.5 transform -translate-y-1/2"
-          aria-label="next"
-        >
-          <KeyboardDoubleArrowLeftIcon sx={{ transform: "rotate(180deg)" }} />
-        </button>}
-
         <button
           onClick={slidePrev}
-          className="z-50 absolute top-1/2 -left-3 transform -translate-y-1/2"
+          className={`absolute top-1/2 -left-3 transform -translate-y-1/2 ${
+            prevDisabled ? " cursor-not-allowed" : ""
+          }`}
           aria-label="previous"
+          disabled={prevDisabled}
         >
-          <KeyboardDoubleArrowRightIcon sx={{ transform: "rotate(180deg)" }} />
+          <KeyboardDoubleArrowLeftIcon sx={{ transform: "rotate(1deg)" }} />
+        </button>
+        
+        <button
+          onClick={slideNext}
+          className={`absolute top-1/2 -right-3.5 transform -translate-y-1/2 ${
+            nextDisabled ? " cursor-not-allowed" : ""
+          }`}
+          aria-label="next"
+          disabled={nextDisabled}
+        >
+          <KeyboardDoubleArrowRightIcon sx={{ transform: "rotate(360deg)" }} />
         </button>
       </div>
     </div>
