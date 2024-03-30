@@ -1,4 +1,4 @@
-export const men = [
+const men = [
   {
     imageUrl: "https://img.freepik.com/photos-gratuite/jeune-homme-boucle-assis-chaise-studio-isole-mur-blanc_231208-1181.jpg?t=st=1711620782~exp=1711624382~hmac=76771dd08cbe154feeab5d2a9efd51458eb537bb6874839aef2b8afaa9690a42&w=360",
     brand: "SG LEMAN",
@@ -102,3 +102,5 @@ export const men = [
     ],
   },
 ];
+
+export default men;

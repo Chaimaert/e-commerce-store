@@ -4,6 +4,8 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import men from '../../../Data/men';
+
 
 const HomeSectionCarosel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -19,8 +21,8 @@ const HomeSectionCarosel = () => {
 
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
 
-  const items = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((items) => (
-    <HomeSectionCard />
+  const items = men.slice(0,10).map((items) => (
+    <HomeSectionCard product={items} />
   ));
 
   return (
@@ -29,7 +31,6 @@ const HomeSectionCarosel = () => {
         <AliceCarousel
           items={items}
           disableButtonsControls
-          infinite
           responsive={responsive}
           disableDotsControls
           onSlideChanged={syncActiveIndex}
