@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Link, Typography } from "@mui/material";
 import React from "react";
 
 const Footer = () => {
@@ -122,8 +122,29 @@ const Footer = () => {
             </button>
           </div>
         </Grid>
-        <Grid>
-          
+
+        <Grid className="pt-20" item xs={12}>
+          <Typography variant="body2" component="p" align="center">
+            &copy; 2024 Chicas. All rights reserved
+          </Typography>
+          <Typography variant="body2" component="p" align="center">
+            Icons made by{" "}
+            <Link
+              href="https://fr.freepik.com/?sign-up=google"
+              color="inherit"
+              underline="always"
+            >
+              Freepik
+            </Link>{" "}
+            from{" "}
+            <Link
+              href="https://www.flaticon.com/"
+              color="inherit"
+              underline="always"
+            >
+              www.flaticon.com
+            </Link>
+          </Typography>
         </Grid>
       </Grid>
     </div>
