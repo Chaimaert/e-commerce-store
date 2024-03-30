@@ -4,9 +4,8 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import men from "../../../Data/men";
 
-const HomeSectionCarosel = () => {
+const HomeSectionCarosel = ({ data, sectionName }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevDisabled, setPrevDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(false);
@@ -20,7 +19,7 @@ const HomeSectionCarosel = () => {
   const handleOnSlideChanged = ({ item }) => {
     setCurrentIndex(item);
     setPrevDisabled(item === 0);
-    setNextDisabled(item === men.length - 5);
+    setNextDisabled(item === data.length - 5);
   };
 
   const slidePrev = () => {
@@ -34,21 +33,22 @@ const HomeSectionCarosel = () => {
   };
 
   const slideNext = () => {
-    if (currentIndex < men.length - 5) {
+    if (currentIndex < data.length - 5) {
       setCurrentIndex(currentIndex + 1);
       setPrevDisabled(false);
     }
-    if (currentIndex === men.length - 6) {
+    if (currentIndex === data.length - 6) {
       setNextDisabled(true);
     }
   };
 
-  const items = men
+  const items = data
     .slice(currentIndex, currentIndex + 5)
     .map((item) => <HomeSectionCard key={item.title} product={item} />);
 
   return (
     <div className="border">
+      <h2 className="text-2xl font-extrabold text-grey-200 py-4 ml-5">{sectionName}</h2>
       <div className="relative p-5">
         <AliceCarousel
           items={items}
@@ -68,7 +68,7 @@ const HomeSectionCarosel = () => {
         >
           <KeyboardDoubleArrowLeftIcon sx={{ transform: "rotate(1deg)" }} />
         </button>
-        
+
         <button
           onClick={slideNext}
           className={`absolute top-1/2 -right-3.5 transform -translate-y-1/2 ${
