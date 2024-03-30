@@ -30,6 +30,7 @@ Tech Stack :
           UI Libraries: Tailwind CSS, Material-UI (MUI)
           State Management: Redux
           Authentication: JWT (JSON Web Tokens)
+          
   --> Backend:
           Framework: Spring Boot
           Security: Spring Security
