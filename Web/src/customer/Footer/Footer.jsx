@@ -125,7 +125,7 @@ const Footer = () => {
 
         <Grid className="pt-20" item xs={12}>
           <Typography variant="body2" component="p" align="center">
-            &copy; 2024 Chicas
+            &copy; 2024 Glamify
           </Typography>
           <Typography variant="body2" component="p" align="center">
           All rights reserved
