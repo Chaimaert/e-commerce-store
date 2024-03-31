@@ -1,5 +1,5 @@
 import React from "react";
-import { navigation } from "../navigation/navigation";
+import navigation from './Navigation';
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
