@@ -26,12 +26,15 @@ Key features of a B2C E-commerce platform optimized for mobile include:
 Tech Stack :
 
   --> Frontend:
+
           Framework: React
           UI Libraries: Tailwind CSS, Material-UI (MUI)
           State Management: Redux
           Authentication: JWT (JSON Web Tokens)
           
+
   --> Backend:
+  
           Framework: Spring Boot
           Security: Spring Security
           Database: MySQL
