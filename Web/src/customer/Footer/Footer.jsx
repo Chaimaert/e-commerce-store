@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <div>
       <Grid
-        className="bg-black text-white text-center mt-10"
+        className=" footer  text-black text-center mt-10"
         container
-        sx={{ bgcolor: "black", color: "white", py: 3 }}
+        sx={{ color: "black", py: 3 }}
       >
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
@@ -125,25 +125,10 @@ const Footer = () => {
 
         <Grid className="pt-20" item xs={12}>
           <Typography variant="body2" component="p" align="center">
-            &copy; 2024 Chicas. All rights reserved
+            &copy; 2024 Chicas
           </Typography>
           <Typography variant="body2" component="p" align="center">
-            Icons made by{" "}
-            <Link
-              href="https://fr.freepik.com/?sign-up=google"
-              color="inherit"
-              underline="always"
-            >
-              Freepik
-            </Link>{" "}
-            from{" "}
-            <Link
-              href="https://www.flaticon.com/"
-              color="inherit"
-              underline="always"
-            >
-              www.flaticon.com
-            </Link>
+          All rights reserved
           </Typography>
         </Grid>
       </Grid>

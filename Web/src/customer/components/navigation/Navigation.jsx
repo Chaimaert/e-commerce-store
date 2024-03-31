@@ -195,10 +195,7 @@ export default function Navigation() {
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <button
-                    type="button"
-                    className="-m-2 flex items-center p-2"
-                  >
+                  <button type="button" className="-m-2 flex items-center p-2">
                     <img
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
@@ -217,8 +214,8 @@ export default function Navigation() {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
+        <p className=" header_color flex h-10 items-center justify-center px-4 text-sm font-medium sm:px-6 lg:px-8">
+          Get free delivery on orders over $500
         </p>
 
         <nav

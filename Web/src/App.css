@@ -42,3 +42,13 @@
   margin: 30px 0; 
 }
 
+.header_color {
+  background-color: #fefae0;
+  color: black;
+  font-style: italic;
+}
+
+.footer {
+  background-color: #fefae0;
+}
+
