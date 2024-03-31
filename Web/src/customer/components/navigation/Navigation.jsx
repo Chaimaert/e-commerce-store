@@ -9,7 +9,6 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -20,7 +19,7 @@ export default function Navigation() {
   const [openAuthModel, setOpenAuthModel] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
-  const jwt = localStorage.getItem("jwt");
+  // const jwt = localStorage.getItem("jwt");
 
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -334,7 +333,8 @@ export default function Navigation() {
                                                 className="flex"
                                               >
                                                 <p
-                                                  onClick={handleCategoryClick(
+                                                  onClick={()=>
+                                                  handleCategoryClick(
                                                     category,
                                                     section,
                                                     item,
