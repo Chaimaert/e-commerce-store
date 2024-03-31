@@ -1,4 +1,4 @@
-const navigation = {
+const navigationData= {
   categories: [
     {
       id: 'women',
@@ -122,5 +122,5 @@ const navigation = {
   ],
 };
 
-export default navigation;
+export default navigationData;
 
