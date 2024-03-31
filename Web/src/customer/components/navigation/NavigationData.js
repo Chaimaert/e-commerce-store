@@ -24,7 +24,7 @@ const navigationData= {
           items: [
             { name: 'Tops', id: 'top', href: '/women/clothing/tops' },
             { name: 'Dresses', id: 'women_dress', href: '#' },
-            { name: 'Women Jeans', id: 'women_jeans', href: '#' },
+            { name: 'Jeans', id: 'women_jeans', href: '#' },
             { name: 'Sweaters', id: 'sweater', href: '#' },
             { name: 'T-Shirts', id: 't-shirt', href: '#' },
             { name: 'Jackets', id: 'jacket', href: '#' },
