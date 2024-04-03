@@ -43,13 +43,13 @@
 }
 
 .header_color {
-  background-color: #fff0f3;
+  background-color: #E2CFEA;
   color: black;
   font-style: italic;
 }
 
 .footer {
-  background-color: #fff0f3;
+  background-color: #E2CFEA;
 }
 
 .filters {
@@ -57,6 +57,10 @@
   font-weight: 900;
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
+}
+
+.bd_color {
+  background-color: #f1e9f1;
 }
 
 
