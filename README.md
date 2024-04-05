@@ -37,10 +37,7 @@ Tech Stack :
           Security: Spring Security
           Database: MySQL
 
-1. Project Nature: This full-stack e-commerce project is designed to be a production-level application, making it an excellent choice for showcasing your skills on your resume.
 
-2. Technology Stack: The project utilizes two powerful and widely adopted libraries: React for the front-end and Spring Boot for the back-end.
+. Project Repository: The repository contains all the necessary resources, including the complete source code, configuration files, and comprehensive documentation. This organized structure enables easy navigation and development.
 
-3. Project Repository: The repository contains all the necessary resources, including the complete source code, configuration files, and comprehensive documentation. This organized structure enables easy navigation and development.
-
-4. Postman API Collection: Alongside the repository, you'll receive a meticulously crafted Postman API collection. It allows you to interact with the project's RESTful API endpoints effortlessly, enabling seamless testing and integration.
+. Postman API Collection: Alongside the repository, you'll receive a meticulously crafted Postman API collection. It allows you to interact with the project's RESTful API endpoints effortlessly, enabling seamless testing and integration.
