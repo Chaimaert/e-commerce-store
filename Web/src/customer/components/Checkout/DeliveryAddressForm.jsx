@@ -20,7 +20,7 @@ const DeliveryAddressForm = () => {
     };
 
     return (
-        <div>
+        <div className='mb-4'>
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={5} className="border rounded-md shadow-md h-[30.5rem] overflow-y-scroll">
                     <div className="p-5 py-7 border-b cursor-pointer">

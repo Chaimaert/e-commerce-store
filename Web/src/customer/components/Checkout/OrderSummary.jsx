@@ -45,10 +45,17 @@ const OrderSummary = () => {
                 color="secondary"
                 variant="contained"
                 sx={{
-                  px: "16.1rem",
+                  px: "8.6rem",
                   py: "1rem",
-                  bgcolor: "#ff99cc",
+                  bgcolor: "#ffb3c6",
                   color: "#000",
+                  fontSize: "14px",
+                  borderRadius: "8px",
+                  transition: "background-color 0.3s ease, color 0.3s ease",
+                  "&:hover": {
+                    bgcolor: "#e066a3",
+                    color: "#fff",
+                  },
                 }}
               >
                 Checkout

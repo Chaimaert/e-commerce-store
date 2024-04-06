@@ -3,6 +3,7 @@ import React from 'react';
 const AddressCard = () => {
     return (
         <div className='space-y-3'>
+          <h1 className='font-bold' style={{ color: '#cdb4db' }}>Delivery Address</h1>
             <p className='font-semibold'>
                 Latifa Didi
             </p>
