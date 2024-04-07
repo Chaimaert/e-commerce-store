@@ -66,7 +66,7 @@ export default function Product() {
   }
 
   return (
-    <div className="bg-white">
+    <div style={{ backgroundColor: 'white' }}>
       <div>
         {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
