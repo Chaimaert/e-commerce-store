@@ -2,6 +2,7 @@ import React from "react";
 import navigationData from "./NavigationData";
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
+import {useNavigate} from "react-router-dom";
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
@@ -15,7 +16,9 @@ function classNames(...classes) {
 }
 
 export default function Navigation() {
+  
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const [openAuthModel, setOpenAuthModel] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
@@ -34,7 +37,7 @@ export default function Navigation() {
   };
 
   const handleCategoryClick = (category, section, item, close) => {
-    // navigate(`/${category.id}/${section.id}/${item.id}`);
+    navigate(`/${category.id}/${section.id}/${item.id}`);
     close();
   };
 
@@ -404,7 +407,7 @@ export default function Navigation() {
                         <MenuItem onClick={handleCloseUserMenu}>
                           Profile
                         </MenuItem>
-                        <MenuItem>My Orders</MenuItem>
+                        <MenuItem onClick={()=>navigate("/account/order")}>My Orders</MenuItem>
                         <MenuItem>Logout</MenuItem>
                       </Menu>
                     </div>
