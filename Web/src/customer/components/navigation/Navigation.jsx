@@ -10,6 +10,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
+import AuthModal from "../../Auth/AuthModal";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -19,10 +20,10 @@ export default function Navigation() {
   
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const [openAuthModel, setOpenAuthModel] = useState(false);
+  const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
-  // const jwt = localStorage.getItem("jwt");
+  const jwt = localStorage.getItem("jwt");
 
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -33,7 +34,11 @@ export default function Navigation() {
   };
 
   const handleOpen = () => {
-    setOpenAuthModel(true);
+    setOpenAuthModal(true);
+  };
+
+  const handleClose = () => {
+    setOpenAuthModal(false);
   };
 
   const handleCategoryClick = (category, section, item, close) => {
@@ -450,6 +455,8 @@ export default function Navigation() {
           </div>
         </nav>
       </header>
+
+      <AuthModal handleClose={handleClose} open={openAuthModal}/>
     </div>
   );
 }
