@@ -2,7 +2,7 @@ import React from "react";
 import navigationData from "./NavigationData";
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
@@ -17,7 +17,6 @@ function classNames(...classes) {
 }
 
 export default function Navigation() {
-  
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const [openAuthModal, setOpenAuthModal] = useState(false);
@@ -341,14 +340,14 @@ export default function Navigation() {
                                                 className="flex"
                                               >
                                                 <p
-                                                  onClick={()=>
-                                                  handleCategoryClick(
-                                                    category,
-                                                    section,
-                                                    item,
-                                                    close
-                                                  )
-                                                }
+                                                  onClick={() =>
+                                                    handleCategoryClick(
+                                                      category,
+                                                      section,
+                                                      item,
+                                                      close
+                                                    )
+                                                  }
                                                   className="cursor-pointer hover:text-gray-800"
                                                 >
                                                   {item.name}
@@ -383,7 +382,7 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  {true ? (
+                  {false ? (
                     <div>
                       <Avatar
                         className="text-white"
@@ -412,7 +411,9 @@ export default function Navigation() {
                         <MenuItem onClick={handleCloseUserMenu}>
                           Profile
                         </MenuItem>
-                        <MenuItem onClick={()=>navigate("/account/order")}>My Orders</MenuItem>
+                        <MenuItem onClick={() => navigate("/account/order")}>
+                          My Orders
+                        </MenuItem>
                         <MenuItem>Logout</MenuItem>
                       </Menu>
                     </div>
@@ -456,7 +457,7 @@ export default function Navigation() {
         </nav>
       </header>
 
-      <AuthModal handleClose={handleClose} open={openAuthModal}/>
+      <AuthModal handleClose={handleClose} open={openAuthModal} />
     </div>
   );
 }
