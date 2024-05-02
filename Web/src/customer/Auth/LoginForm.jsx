@@ -2,10 +2,14 @@ import React from "react";
 import { Grid, TextField } from "@mui/material";
 import { Button } from "@mui/base";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../State/Auth/Action";
+
 
 const LoginForm = () => {
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,6 +19,7 @@ const LoginForm = () => {
       password: data.get("password"),
     };
 
+    dispatch(login(userData));
     console.log("userData", userData);
   };
 
@@ -22,7 +27,6 @@ const LoginForm = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={3}>
-
           <Grid item xs={12}>
             <TextField
               required
@@ -61,10 +65,13 @@ const LoginForm = () => {
       <div className="flex justify-center flex-col items-center">
         <div className="py-3 flex items-center">
           <p>Don't have an account ?</p>
-          <Button onClick={() => navigate("/register")}
-          className="ml-5 text-[#9d4edd]"
-          size='small'
-          >Register</Button>
+          <Button
+            onClick={() => navigate("/register")}
+            className="ml-5 text-[#9d4edd]"
+            size="small"
+          >
+            Register
+          </Button>
         </div>
       </div>
     </div>
