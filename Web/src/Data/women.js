@@ -1,0 +1,100 @@
+const women = [
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCu9ZbbWJwd82pPP0s8z-dSejj5nsXHIt1nRLCC6Rs6A&",
+    title: "women's dress",
+    color: "white",
+    discountedPrice: "$19.99",
+    price: "$29.99",
+    discountPersent: "30%",
+    size: [
+      { name: "S", quantity: "30" },
+      { name: "M", quantity: "15" },
+      { name: "L", quantity: "20" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc0yt-p2KZ5hAhfub09QDp6OBB-Jak5z9m-yr3OMEWqQ&s",
+    brand: "XYZ Brand",
+    title: "wome's shirt",
+    color: "Blue",
+    discountedPrice: "$39.99",
+    price: "$49.99",
+    discountPersent: "20%",
+    size: [
+      { name: "S", quantity: "30" },
+      { name: "M", quantity: "20" },
+      { name: "L", quantity: "15" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjwdEwKbWnbPOlOyGbxbZ5pvM6X81n-Z48f4fFxdpsOw&s",
+    brand: "H&M",
+    title: "Women's Jeans",
+    color: "Blue",
+    discountedPrice: "$49.99",
+    price: "$59.99",
+    discountPersent: "17%",
+    size: [
+      { name: "30W x 32L", quantity: "20" },
+      { name: "32W x 34L", quantity: "15" },
+      { name: "34W x 34L", quantity: "25" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJxNQXCSM--_zz59MkAfF3eJNAE_HLJL0C2GVVw6mSA&s",
+    brand: "Nike",
+    title: "Wome's Jacket",
+    color: "Black",
+    discountedPrice: "$59.99",
+    price: "$79.99",
+    discountPersent: "25%",
+    size: [
+      { name: "S", quantity: "30" },
+      { name: "M", quantity: "20" },
+      { name: "L", quantity: "15" },
+    ],
+  },
+  {
+    imageUrl: "https://img.guess.com/image/upload/f_auto,q_auto:eco,fl_strip_profile,dpr_1.5,fl_advanced_resize,fl_progressive,w_392,c_scale/v1/NA/Style/ECOMM/W4GH88WG7B0-G6K8",
+    brand: "ZARA",
+    title: "Women's Top",
+    color: "Pink",
+    discountedPrice: "$79.99",
+    price: "$99.99",
+    discountPersent: "20%",
+    size: [
+      { name: "S", quantity: "20" },
+      { name: "M", quantity: "35" },
+      { name: "L", quantity: "25" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDImgDGSU4Qxpi_gHLNuUHU42h5GEMGY_gxVYXbh4yLA&s",
+    brand: "JKL Wear",
+    title: "Women's Shorts",
+    color: "Grey",
+    discountedPrice: "$24.99",
+    price: "$34.99",
+    discountPersent: "28%",
+    size: [
+      { name: "S", quantity: "25" },
+      { name: "M", quantity: "20" },
+      { name: "L", quantity: "20" },
+      { name: "XL", quantity: "15" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWDACkpc5BEZSytJ1NG0mPeg_bgykNmeIEshgB1bsBrQ&s",
+    brand: "MNO Outfitters",
+    title: "Women's Jumpsuit",
+    color: "Gray",
+    discountedPrice: "$39.99",
+    price: "$49.99",
+    discountPersent: "20%",
+    size: [
+      { name: "One Size", quantity: "25" }
+    ],
+  },
+];
+
+export default women;

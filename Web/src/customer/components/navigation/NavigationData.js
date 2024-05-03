@@ -32,18 +32,6 @@ const navigationData= {
           ],
         },
         {
-          id: 'accessories',
-          name: 'Accessories',
-          items: [
-            { name: 'Watches', id: 'watch', href: '#' },
-            { name: 'Wallets', id: 'wallet', href: '#' },
-            { name: 'Bags', id: 'bag', href: '#' },
-            { name: 'Sunglasses', id: 'sunglasse', href: '#' },
-            { name: 'Hats', id: 'hat', href: '#' },
-            { name: 'Belts', id: 'belt', href: '#' },
-          ],
-        },
-        {
           id: 'brands',
           name: 'Brands',
           items: [
@@ -85,18 +73,6 @@ const navigationData= {
             { name: 'T-Shirts', id: 't-shirt', href: '#' },
             { name: 'Jackets', id: 'jacket', href: '#' },
             { name: 'Activewear', id: 'activewear', href: '#' },
-          ],
-        },
-        {
-          id: 'accessories',
-          name: 'Accessories',
-          items: [
-            { name: 'Watches', id: 'watch', href: '#' },
-            { name: 'Wallets', id: 'wallet', href: '#' },
-            { name: 'Bags', id: 'bag', href: '#' },
-            { name: 'Sunglasses', id: 'sunglasses', href: '#' },
-            { name: 'Hats', id: 'hat', href: '#' },
-            { name: 'Belts', id: 'belt', href: '#' },
           ],
         },
         {

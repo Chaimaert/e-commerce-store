@@ -14,10 +14,10 @@ import {
 } from "./ActionType";
 
 const initialState = {
-  products: [],
-  product: null,
+  cart: null,
   loading: false,
   error: null,
+  cartItems: [],
 };
 
 export const cartReducer = (state = initialState, action) => {

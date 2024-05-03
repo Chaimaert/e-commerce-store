@@ -11,7 +11,6 @@ const men = [
       { name: "S", quantity: "30" },
       { name: "M", quantity: "15" },
       { name: "L", quantity: "20" },
-      { name: "XL", quantity: "10" },
     ],
   },
   {
@@ -26,7 +25,6 @@ const men = [
       { name: "S", quantity: "30" },
       { name: "M", quantity: "20" },
       { name: "L", quantity: "15" },
-      { name: "XL", quantity: "25" },
     ],
   },
   {
@@ -41,7 +39,6 @@ const men = [
       { name: "30W x 32L", quantity: "20" },
       { name: "32W x 34L", quantity: "15" },
       { name: "34W x 34L", quantity: "25" },
-      { name: "36W x 34L", quantity: "10" },
     ],
   },
   {
@@ -56,7 +53,6 @@ const men = [
       { name: "US 9", quantity: "30" },
       { name: "US 10", quantity: "20" },
       { name: "US 11", quantity: "15" },
-      { name: "US 12", quantity: "10" },
     ],
   },
   {
@@ -71,7 +67,6 @@ const men = [
       { name: "S", quantity: "20" },
       { name: "M", quantity: "35" },
       { name: "L", quantity: "25" },
-      { name: "XL", quantity: "15" },
     ],
   },
   {
@@ -86,7 +81,6 @@ const men = [
       { name: "S", quantity: "25" },
       { name: "M", quantity: "20" },
       { name: "L", quantity: "20" },
-      { name: "XL", quantity: "15" },
     ],
   },
   {

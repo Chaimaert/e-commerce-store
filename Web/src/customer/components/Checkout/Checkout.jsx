@@ -6,8 +6,8 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useLocation } from 'react-router-dom';
-import DeliveryAddressForm from './DeliveryAddressForm'; // Assurez-vous que le chemin d'importation est correct
-import OrderSummary from './OrderSummary'; // Assurez-vous que le chemin d'importation est correct
+import DeliveryAddressForm from './DeliveryAddressForm'; 
+import OrderSummary from './OrderSummary'; 
 
 const steps = ['Login', 'Add Delivery Address', 'Order Summary', 'Payment'];
 

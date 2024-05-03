@@ -1,0 +1,100 @@
+const children = [
+  {
+    imageUrl: "https://www.next.co.uk/nxtcms/resource/image/4806360/portrait_ratio1x1/305/305/3e919390072d0b53f7e8300d0e6f2dbd/BFB03EFADA2FEFAC8ACEFD7A98916741/girls.jpg",
+    title: "girl's dress",
+    color: "pink",
+    discountedPrice: "$19.99",
+    price: "$29.99",
+    discountPersent: "30%",
+    size: [
+      { name: "S", quantity: "30" },
+      { name: "M", quantity: "15" },
+      { name: "L", quantity: "20" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuK1gJ4fKfRpg6dldXFNNLgJiXBDrHhmUuBRw_t7IJYQ&s",
+    brand: "XYZ Brand",
+    title: "girl's coat",
+    color: "Beige",
+    discountedPrice: "$39.99",
+    price: "$49.99",
+    discountPersent: "20%",
+    size: [
+      { name: "S", quantity: "30" },
+      { name: "M", quantity: "20" },
+      { name: "L", quantity: "15" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE_XXhepPsZqn05O0yj7GzKDK7prwsqOXaneQgLCOp7Q&s",
+    brand: "H&M",
+    title: "Boy's T-shirt",
+    color: "Grey",
+    discountedPrice: "$49.99",
+    price: "$59.99",
+    discountPersent: "17%",
+    size: [
+      { name: "S", quantity: "30" },
+      { name: "M", quantity: "20" },
+      { name: "L", quantity: "15" },
+    ],
+  },
+  {
+    imageUrl: "https://i.pinimg.com/564x/10/4f/c0/104fc0e1411a2ff0ab613154313a91ac.jpg",
+    brand: "Nike",
+    title: "Boy's Jacket",
+    color: "Black",
+    discountedPrice: "$59.99",
+    price: "$79.99",
+    discountPersent: "25%",
+    size: [
+      { name: "S", quantity: "30" },
+      { name: "M", quantity: "20" },
+      { name: "L", quantity: "15" },
+    ],
+  },
+  {
+    imageUrl: "https://www.next.co.uk/nxtcms/resource/blob/6012738/3d56d11eebe932126047c7de416405d8/05-03-24-boyslp-hero-mb-data.jpg",
+    brand: "ZARA",
+    title: "WBoy's Jacket",
+    color: "Blue",
+    discountedPrice: "$79.99",
+    price: "$99.99",
+    discountPersent: "20%",
+    size: [
+      { name: "S", quantity: "20" },
+      { name: "M", quantity: "35" },
+      { name: "L", quantity: "25" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDImgDGSU4Qxpi_gHLNuUHU42h5GEMGY_gxVYXbh4yLA&s",
+    brand: "JKL Wear",
+    title: "Women's Shorts",
+    color: "Grey",
+    discountedPrice: "$24.99",
+    price: "$34.99",
+    discountPersent: "28%",
+    size: [
+      { name: "S", quantity: "25" },
+      { name: "M", quantity: "20" },
+      { name: "L", quantity: "20" },
+      { name: "XL", quantity: "15" },
+    ],
+  },
+  {
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWDACkpc5BEZSytJ1NG0mPeg_bgykNmeIEshgB1bsBrQ&s",
+    brand: "MNO Outfitters",
+    title: "Women's Jumpsuit",
+    color: "Gray",
+    discountedPrice: "$39.99",
+    price: "$49.99",
+    discountPersent: "20%",
+    size: [
+      { name: "One Size", quantity: "25" }
+    ],
+  },
+];
+
+export default children;
