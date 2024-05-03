@@ -9,6 +9,7 @@ import ProductDetails from "../customer/components/ProductDetails/ProductDetails
 import Checkout from "../customer/components/Checkout/Checkout.jsx";
 import Order from "../customer/components/Order/Order.jsx";
 import OrderDetails from "../customer/components/Order/OrderDetails.jsx";
+import PaymentSuccess from "../customer/components/Payment/PaymentSuccess.jsx";
 
 const CustomerRouters = () => {
   return (
@@ -32,6 +33,7 @@ const CustomerRouters = () => {
           path="/account/order/:odrerId"
           element={<OrderDetails />}
         ></Route>
+        <Route path="/payment/:orderId" element={<PaymentSuccess/>}></Route>
       </Routes>
       <div>
         <Footer />

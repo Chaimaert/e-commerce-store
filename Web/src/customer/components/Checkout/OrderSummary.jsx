@@ -18,6 +18,10 @@ const OrderSummary = () => {
     dispatch(getOrderById(orderId));
   }, [orderId]);
 
+  const handleCheckout=()=>{
+    dispatch(createPayment(orderId))
+  }
+
   return (
     <div>
       <div className="p-5 shadow-lg rounded-s-md border">
@@ -75,6 +79,7 @@ const OrderSummary = () => {
                     color: "#fff",
                   },
                 }}
+                onClick={ handleCheckout }
               >
                 Checkout
               </Button>
