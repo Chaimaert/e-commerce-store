@@ -1,4 +1,4 @@
-import api, { API_BASE_URL } from "../../config/apiConfig";
+import { api } from "../../config/apiConfig";
 import {
   CREATE_ORDER_FAILURE,
   CREATE_ORDER_REQUEST,
