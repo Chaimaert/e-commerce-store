@@ -50,11 +50,14 @@ const CartItem = ({item}) => {
                     <IconButton  onClick={() => handleUpdateCartItem(-1)} disabled = {item.quantity<=1}>
                         <RemoveCircleOutlineIcon/>
                     </IconButton>
-                    <span className="py-1 px-7 border rounded-sm">3</span>
+                    <span className="py-1 px-7 border rounded-sm">{item.quantity}</span>
                         <IconButton onClick={() => handleUpdateCartItem(1)}  sx={{color:"RGB(145 85 253)"}}>
                             <AddCircleIcon/>
                         </IconButton>
-                        <Button className="font-semibold" sx={{color:"RGB(255, 128, 0, 1)"}} >Remove</Button>
+                </div>
+
+                <div>
+                <Button onClick={handleRemoveCartItem} className="font-semibold" sx={{color:"RGB(255, 128, 0, 1)"}} >Remove</Button>
                 </div>
             </div>
 

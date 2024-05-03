@@ -50,7 +50,7 @@ export const removeCartItem = (cartItemId) => async (dispatch) => {
   try {
 
     const { data } = await api.delete(`/api/cart_items/${cartItemId}`);
-    dispatch({type:REMOVE_CART_ITEM_SUCCESS, payload:data});
+    dispatch({type:REMOVE_CART_ITEM_SUCCESS, payload:cartItemId});
 
   } catch (error) {
 
