@@ -21,6 +21,10 @@ Key features of a B2C E-commerce platform optimized for mobile include:
 
 --> Mobile App Integration: In addition to the mobile-optimized website, the platform may offer a dedicated mobile app for iOS and Android devices, providing customers with a convenient and seamless shopping experience on their smartphones or tablets.
 
+--> Project Repository: The repository contains all the necessary resources, including the complete source code, configuration files, and comprehensive documentation. This organized structure enables easy navigation and development.
+
+--> Postman API Collection: Alongside the repository, we'll receive a meticulously crafted Postman API collection. It allows you to interact with the project's RESTful API endpoints effortlessly, enabling seamless testing and integration.
+
 . For the Web application : 
 
 Tech Stack :
@@ -33,11 +37,49 @@ Tech Stack :
           
 
   --> Backend:
-          Framework: Spring Boot
-          Security: Spring Security
-          Database: MySQL
+          The backend is the same for the web application and for the mobile app.
+          Framework: Spring Boot (for RESTful API)
+          Security: Spring Security (for authentication and authorization)
+          Database: MySQL 
 
+. For the Mobile application : 
 
-. Project Repository: The repository contains all the necessary resources, including the complete source code, configuration files, and comprehensive documentation. This organized structure enables easy navigation and development.
+Tech Stack :
 
-. Postman API Collection: Alongside the repository, you'll receive a meticulously crafted Postman API collection. It allows you to interact with the project's RESTful API endpoints effortlessly, enabling seamless testing and integration.
+  --> Frontend:   
+          Framework: React Native
+          UI Libraries: React Native Paper, React Navigation
+          State Management: React Context API
+          Authentication: JWT (JSON Web Tokens) with AsyncStorage for token storage
+
+. Key Features:
+
+ --> Responsive Design: Utilize React Native's responsive design principles to ensure compatibility with various mobile devices and screen sizes.
+  
+ --> User-Friendly Navigation: Implement intuitive navigation patterns using React Navigation to allow users to navigate through different screens effortlessly.
+  
+ --> Product Catalog: Fetch and display products from the backend API, organized into categories and subcategories for easy browsing.
+  
+ --> Shopping Cart: Enable users to add products to their cart, view cart contents, and update quantities as needed.
+  
+ --> Secure Checkout Process: Implement secure checkout functionality, including encryption protocols and integration with payment gateways for secure transactions.
+  
+ --> Multiple Payment Options: Integrate various payment methods, such as credit/debit cards, digital wallets, etc., for users to choose from during checkout.
+  
+ --> Order Management: Allow users to view order history, track order status, and manage shipping and delivery preferences within the app.
+  
+ --> Personalization: Implement personalized recommendations and promotions based on user preferences, browsing history, and past purchases.
+  
+. Development Considerations:
+
+ --> UI/UX Design: Design an intuitive and visually appealing user interface following mobile app design guidelines for iOS and Android platforms.
+  
+ --> API Integration: Communicate with the backend API endpoints to fetch product data, process orders, and handle user authentication.
+  
+ --> State Management: Utilize Redux or React Context API to manage application state effectively, including user authentication, shopping cart state, etc.
+  
+ --> Async Storage: Use AsyncStorage or similar solutions to securely store JWT tokens for user authentication between app sessions.
+  
+ --> Testing and Deployment: Conduct thorough testing on real devices and emulators to ensure app stability and compatibility across various platforms.
+  
+
