@@ -1,0 +1,708 @@
+--> model package : 
+
+. User class : 
+
+	package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+class UserTest {
+
+    User user;
+
+    @BeforeEach
+    public void setUp() {
+        user = new User();
+    }
+
+    @Test
+    void testUser() {
+        assertNotNull(user);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        user.setId(1L);
+        user.setFirstName("Chaimae");
+        user.setLastname("Rouita");
+        user.setPassword("1234");
+        user.setEmail("chaimaerouita@example.com");
+        user.setRole("ROLE_USER");
+        user.setMobile("1234567890");
+
+        List<Address> addresses = new ArrayList<>();
+        addresses.add(new Address());
+        user.setAddress(addresses);
+
+        List<PaymentInformation> paymentInformation = new ArrayList<>();
+        paymentInformation.add(new PaymentInformation());
+        user.setPaymentInformation(paymentInformation);
+
+        List<Rating> ratings = new ArrayList<>();
+        ratings.add(new Rating());
+        user.setRatings(ratings);
+
+        List<Review> reviews = new ArrayList<>();
+        reviews.add(new Review());
+        user.setRivews(reviews);
+
+        LocalDateTime createdAt = LocalDateTime.now();
+        user.setCreatedAt(createdAt);
+
+        assertEquals(1L, user.getId());
+        assertEquals("Chaimae", user.getFirstName());
+        assertEquals("Rouita", user.getLastname());
+        assertEquals("1234", user.getPassword());
+        assertEquals("chaimaerouita@example.com", user.getEmail());
+        assertEquals("ROLE_USER", user.getRole());
+        assertEquals("1234567890", user.getMobile());
+        assertEquals(1, user.getAddress().size());
+        assertEquals(1, user.getPaymentInformation().size());
+        assertEquals(1, user.getRatings().size());
+        assertEquals(1, user.getRivews().size());
+        assertEquals(createdAt, user.getCreatedAt());
+    }
+}
+
+. Product class :
+
+	package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ProductTest {
+
+    Product product;
+
+    @BeforeEach
+    public void setUp() {
+        product = new Product();
+    }
+
+    @Test
+    void testProductConstructor() {
+        assertNotNull(product);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        product.setId(1L);
+        product.setTitle("Test Product");
+        product.setDescription("Test description");
+        product.setPrice(100);
+        product.setDiscountedPrice(90);
+        product.setDiscountPresent(10);
+        product.setQuantity(10);
+        product.setBrand("Test Brand");
+        product.setColor("Red");
+
+        Set<Size> sizes = new HashSet<>();
+        sizes.add(Size.SMALL);
+        product.setSizes(sizes);
+
+        product.setImageUrl("test_image_url");
+
+        LocalDateTime createdAt = LocalDateTime.now();
+        product.setCreatedAt(createdAt);
+
+        assertEquals(1L, product.getId());
+        assertEquals("Test Product", product.getTitle());
+        assertEquals("Test description", product.getDescription());
+        assertEquals(100, product.getPrice());
+        assertEquals(90, product.getDiscountedPrice());
+        assertEquals(10, product.getDiscountPresent());
+        assertEquals(10, product.getQuantity());
+        assertEquals("Test Brand", product.getBrand());
+        assertEquals("Red", product.getColor());
+        assertEquals(1, product.getSizes().size());
+        assertTrue(product.getSizes().contains(Size.SMALL)); 
+        assertEquals("test_image_url", product.getImageUrl());
+        assertEquals(createdAt, product.getCreatedAt());
+    }
+}
+
+. Size class :
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class SizeTest {
+
+    Size size;
+
+    @BeforeEach
+    void setUp() {
+        size = new Size();
+    }
+
+    @Test
+    void testSizeConstructor() {
+        assertNotNull(size);
+    }
+
+    @Test
+    void testSetName() {
+        size.setName("Small");
+        assertEquals("Small", size.getName());
+    }
+
+    @Test
+    void testSetQuantity() {
+        size.setQuantity(10);
+        assertEquals(10, size.getQuantity());
+    }
+}
+
+. Review class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDateTime;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ReviewTest {
+
+    Review review;
+
+    @BeforeEach
+    void setUp() {
+        review = new Review();
+    }
+
+    @Test
+    void testReviewConstructor() {
+        assertNotNull(review);
+    }
+
+    @Test
+    void testSetReview() {
+        review.setReview("This is a test review");
+        assertEquals("This is a test review", review.getReview());
+    }
+
+    @Test
+    void testSetProduct() {
+        Product product = new Product();
+        product.setId(1L);
+        review.setProduct(product);
+        assertEquals(1L, review.getProduct().getId());
+    }
+
+    @Test
+    void testSetUser() {
+        User user = new User();
+        user.setId(1L);
+        review.setUser(user);
+        assertEquals(1L, review.getUser().getId());
+    }
+
+    @Test
+    void testSetCreatedAt() {
+        LocalDateTime createdAt = LocalDateTime.now();
+        review.setCreatedAt(createdAt);
+        assertEquals(createdAt, review.getCreatedAt());
+    }
+}
+
+. Rating Class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDateTime;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class RatingTest {
+
+    Rating rating;
+
+    @BeforeEach
+    void setUp() {
+        rating = new Rating();
+    }
+
+    @Test
+    void testRatingConstructor() {
+        assertNotNull(rating);
+    }
+
+    @Test
+    void testSetUser() {
+        User user = new User();
+        user.setId(1L);
+        rating.setUser(user);
+        assertEquals(1L, rating.getUser().getId());
+    }
+
+    @Test
+    void testSetProduct() {
+        Product product = new Product();
+        product.setId(1L);
+        rating.setProduct(product);
+        assertEquals(1L, rating.getProduct().getId());
+    }
+
+    @Test
+    void testSetRating() {
+        rating.setRating(4.5);
+        assertEquals(4.5, rating.getRating());
+    }
+
+    @Test
+    void testSetCreatedAt() {
+        LocalDateTime createdAt = LocalDateTime.now();
+        rating.setCreatedAt(createdAt);
+        assertEquals(createdAt, rating.getCreatedAt());
+    }
+}
+
+. PaymentInformation class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class PaymentInformationTest {
+
+    PaymentInformation paymentInfo;
+
+    @BeforeEach
+    void setUp() {
+        paymentInfo = new PaymentInformation();
+    }
+
+    @Test
+    void testPaymentInformationConstructor() {
+        assertNotNull(paymentInfo);
+    }
+
+    @Test
+    void testSetCardholderName() {
+        paymentInfo.setCardholderName("John Doe");
+        assertEquals("John Doe", paymentInfo.getCardholderName());
+    }
+
+    @Test
+    void testSetCardNumber() {
+        paymentInfo.setCardNumber("1234567890123456");
+        assertEquals("1234567890123456", paymentInfo.getCardNumber());
+    }
+
+    @Test
+    void testSetExpirationDate() {
+        LocalDate expirationDate = LocalDate.of(2024, 12, 31);
+        paymentInfo.setExpirationDate(expirationDate);
+        assertEquals(expirationDate, paymentInfo.getExpirationDate());
+    }
+
+    @Test
+    void testSetCvv() {
+        paymentInfo.setCvv("123");
+        assertEquals("123", paymentInfo.getCvv());
+    }
+}
+
+. PaymentDetails Class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class PaymentDetailsTest {
+
+    private PaymentDetails paymentDetails;
+
+    @BeforeEach
+    public void setUp() {
+        paymentDetails = new PaymentDetails();
+    }
+
+    @Test
+    void testPaymentDetailsConstructor() {
+        assertNotNull(paymentDetails);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        paymentDetails.setPaymentMethod("Credit Card");
+        paymentDetails.setStatus("Success");
+        paymentDetails.setPaymentId("PAYMENT123");
+        paymentDetails.setRazorpayPaymentLinkId("LINK123");
+        paymentDetails.setRazorpayPaymentLinkReferenceId("REF123");
+        paymentDetails.setRazorpayPaymentLinkStatus("Active");
+        paymentDetails.setRazorpayPaymentId("RAZORPAY123");
+
+        assertEquals("Credit Card", paymentDetails.getPaymentMethod());
+        assertEquals("Success", paymentDetails.getStatus());
+        assertEquals("PAYMENT123", paymentDetails.getPaymentId());
+        assertEquals("LINK123", paymentDetails.getRazorpayPaymentLinkId());
+        assertEquals("REF123", paymentDetails.getRazorpayPaymentLinkReferenceId());
+        assertEquals("Active", paymentDetails.getRazorpayPaymentLinkStatus());
+        assertEquals("RAZORPAY123", paymentDetails.getRazorpayPaymentId());
+    }
+}
+
+. OrderItem Class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.time.LocalDateTime;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class OrderItemTest {
+
+    private OrderItem orderItem;
+
+    @BeforeEach
+    public void setUp() {
+        orderItem = new OrderItem();
+    }
+
+    @Test
+    void testOrderItemConstructor() {
+        assertNotNull(orderItem);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        Order order = new Order();
+        Product product = new Product();
+        LocalDateTime deliverDate = LocalDateTime.now();
+
+        orderItem.setId(1L);
+        orderItem.setOrder(order);
+        orderItem.setProduct(product);
+        orderItem.setSize("MEDIUM");
+        orderItem.setQuantity(2);
+        orderItem.setPrice(100);
+        orderItem.setDiscountedPrice(90);
+        orderItem.setUserId(12345L);
+        orderItem.setDeliverDate(deliverDate);
+
+        assertEquals(1L, orderItem.getId());
+        assertEquals(order, orderItem.getOrder());
+        assertEquals(product, orderItem.getProduct());
+        assertEquals("MEDIUM", orderItem.getSize());
+        assertEquals(2, orderItem.getQuantity());
+        assertEquals(100, orderItem.getPrice());
+        assertEquals(90, orderItem.getDiscountedPrice());
+        assertEquals(12345L, orderItem.getUserId());
+        assertEquals(deliverDate, orderItem.getDeliverDate());
+    }
+}
+
+. Order Class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class OrderTest {
+
+    private Order order;
+
+    @BeforeEach
+    public void setUp() {
+        order = new Order();
+    }
+
+    @Test
+    void testOrderConstructor() {
+        assertNotNull(order);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        User user = new User();
+        Address shippingAddress = new Address();
+        PaymentDetails paymentDetails = new PaymentDetails();
+        LocalDateTime orderDate = LocalDateTime.now();
+        LocalDateTime deliveryDate = orderDate.plusDays(7);
+
+        List<OrderItem> orderItems = new ArrayList<>();
+        OrderItem orderItem = new OrderItem();
+        orderItem.setId(1L);
+        orderItem.setProduct(new Product());
+        orderItems.add(orderItem);
+
+        order.setId(1L);
+        order.setOrderId("ORDER123");
+        order.setUser(user);
+        order.setOrderItems(orderItems);
+        order.setOrderDate(orderDate);
+        order.setDeliveryDate(deliveryDate);
+        order.setShippingAddress(shippingAddress);
+        order.setPaymentDetails(paymentDetails);
+        order.setTotalPrice(100.00);
+        order.setTotalDiscountedPrice(90);
+        order.setDiscount(10);
+        order.setOrderStatus("Pending");
+        order.setTotalItem(orderItems.size());
+        order.setCreatedAt(LocalDateTime.now());
+
+        assertEquals(1L, order.getId());
+        assertEquals("ORDER123", order.getOrderId());
+        assertEquals(user, order.getUser());
+        assertEquals(orderItems, order.getOrderItems());
+        assertEquals(orderDate, order.getOrderDate());
+        assertEquals(deliveryDate, order.getDeliveryDate());
+        assertEquals(shippingAddress, order.getShippingAddress());
+        assertEquals(paymentDetails, order.getPaymentDetails());
+        assertEquals(100.00, order.getTotalPrice());
+        assertEquals(90, order.getTotalDiscountedPrice());
+        assertEquals(10, order.getDiscount());
+        assertEquals("Pending", order.getOrderStatus());
+        assertEquals(orderItems.size(), order.getTotalItem());
+    }
+}
+
+. Category class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class CategoryTest {
+
+    private Category category;
+
+    @BeforeEach
+    public void setUp() {
+        category = new Category();
+    }
+
+    @Test
+    void testCategoryConstructor() {
+        assertNotNull(category);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        Category parentCategory = new Category();
+        parentCategory.setId(1L);
+        parentCategory.setName("Parent Category");
+        parentCategory.setLevel(1);
+
+        category.setId(2L);
+        category.setName("Child Category");
+        category.setParentCategory(parentCategory);
+        category.setLevel(2);
+
+        assertEquals(2L, category.getId());
+        assertEquals("Child Category", category.getName());
+        assertEquals(parentCategory, category.getParentCategory());
+        assertEquals(2, category.getLevel());
+    }
+}
+
+. CartItem Class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class CartItemTest {
+
+    private CartItem cartItem;
+
+    @BeforeEach
+    public void setUp() {
+        cartItem = new CartItem();
+    }
+
+    @Test
+    void testCartItemConstructor() {
+        assertNotNull(cartItem);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        Cart cart = new Cart();
+        cart.setId(1L);
+
+        Product product = new Product();
+        product.setId(2L);
+
+        cartItem.setId(3L);
+        cartItem.setCart(cart);
+        cartItem.setProduct(product);
+        cartItem.setSize("Small");
+        cartItem.setQuantity(2);
+        cartItem.setPrice(100);
+        cartItem.setDiscountedPrice(90);
+        cartItem.setUserId(4L);
+
+        assertEquals(3L, cartItem.getId());
+        assertEquals(cart, cartItem.getCart());
+        assertEquals(product, cartItem.getProduct());
+        assertEquals("Small", cartItem.getSize());
+        assertEquals(2, cartItem.getQuantity());
+        assertEquals(100, cartItem.getPrice());
+        assertEquals(90, cartItem.getDiscountedPrice());
+        assertEquals(4L, cartItem.getUserId());
+    }
+}
+
+. Cart Class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class CartTest {
+
+    private Cart cart;
+
+    @BeforeEach
+    public void setUp() {
+        cart = new Cart();
+    }
+
+    @Test
+    void testCartConstructor() {
+        assertNotNull(cart);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        User user = new User();
+        user.setId(1L);
+
+        Set<CartItem> cartItems = new HashSet<>();
+        CartItem cartItem = new CartItem();
+        cartItem.setId(2L);
+        cartItems.add(cartItem);
+
+        cart.setId(3L);
+        cart.setUser(user);
+        cart.setCartItems(cartItems);
+        cart.setTotalPrice(100.0);
+        cart.setTotalItem(2);
+        cart.setTotalDiscountedPrice(90);
+        cart.setDiscount(10);
+
+        assertEquals(3L, cart.getId());
+        assertEquals(user, cart.getUser());
+        assertEquals(cartItems, cart.getCartItems());
+        assertEquals(100.0, cart.getTotalPrice());
+        assertEquals(2, cart.getTotalItem());
+        assertEquals(90, cart.getTotalDiscountedPrice());
+        assertEquals(10, cart.getDiscount());
+    }
+}
+
+.Address Class : 
+
+package com.chaimae.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class AddressTest {
+
+    private Address address;
+
+    @BeforeEach
+    public void setUp() {
+        address = new Address();
+    }
+
+    @Test
+    void testAddressConstructor() {
+        assertNotNull(address);
+    }
+
+    @Test
+    void testGettersAndSetters() {
+        User user = new User();
+        user.setId(1L);
+
+        address.setId(2L);
+        address.setFirstName("Chaimae");
+        address.setLastName("Rouita");
+        address.setStreetAddress("Les cristaux citrine A");
+        address.setCity("Marrakech");
+        address.setState("Maroc");
+        address.setZipCode("40000");
+        address.setUser(user);
+        address.setMobile("123-456-7890");
+
+        assertEquals(2L, address.getId());
+        assertEquals("Chaimae", address.getFirstName());
+        assertEquals("Rouita", address.getLastName());
+        assertEquals("Les cristaux citrine A", address.getStreetAddress());
+        assertEquals("Marrakech", address.getCity());
+        assertEquals("Maroc", address.getState());
+        assertEquals("40000", address.getZipCode());
+        assertEquals(user, address.getUser());
+        assertEquals("123-456-7890", address.getMobile());
+    }
+}
+
+--> Repository package : 
+
+ . 
+ 
