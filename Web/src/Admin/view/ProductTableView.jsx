@@ -12,14 +12,10 @@ import men from "../../Data/men";
 import { Avatar, Card, CardHeader, withTheme } from "@mui/material";
 import { Button } from "@mui/base";
 
-const ProductsTable = () => {
+const ProductsTableView = () => {
 const dispatch=useDispatch();
 const {products}=useSelector(store=>store);
-console.log("products ----",products)
 
-const handleProductDelete=(productId)=>(
-    dispatch(deleteProduct(productId))
-)
 
 useEffect(()=>{
         const data = {
@@ -39,9 +35,9 @@ useEffect(()=>{
     },[products.deletedProduct])
 
     return (
-        <div className="p-5 bg-[#FFC0CB] text-black">
+        <div className="p-10 bg-[#FFC0CB] text-black">
 <Card className='mt-2'>
-    <CardHeader title="All Product" sx={{bgcolor:'#FFFFFF'}}/>
+    <CardHeader title="Recent Product" sx={{bgcolor:'#FFFFFF'}}/>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -51,11 +47,11 @@ useEffect(()=>{
             <TableCell align="right" style={{ fontSize: '1.2rem' }}>Category</TableCell>
             <TableCell align="right" style={{ fontSize: '1.2rem' }}>Price</TableCell>
             <TableCell align="right" style={{ fontSize: '1.2rem' }}>Quantity</TableCell>
-            <TableCell align="right" style={{ fontSize: '1.2rem' }}>Delete</TableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
-          {products?.products?.content?.map((item) => (
+          {products?.products?.content?.slice(0,5).map((item) => (
             <TableRow
               key={item.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -71,11 +67,7 @@ useEffect(()=>{
               <TableCell align="right">{item.category.name}</TableCell>
               <TableCell align="right">{item.price}</TableCell>
               <TableCell align="right">{item.quantity}</TableCell>
-              <TableCell align="right">
-                <Button onClick={()=>handleProductDelete(item.id)} variant='outlined'>
-                  Delete
-                </Button>
-                </TableCell>
+             
           </TableRow>
           ))} 
         </TableBody>
@@ -85,4 +77,4 @@ useEffect(()=>{
         </div>
     )
 }
-export default ProductsTable
+export default ProductsTableView

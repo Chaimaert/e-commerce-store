@@ -25,6 +25,11 @@ const initialState = {
 const adminOrderReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ORDERS_REQUEST:
+            return {
+                ...state,
+                loading: false,
+                orders: action.payload,
+            };
         case CONFIRMED_ORDERS_REQUEST:
         case SHIP_ORDERS_REQUEST:
         case DELEVERED_ORDERS_REQUEST:
@@ -56,7 +61,7 @@ const adminOrderReducer = (state = initialState, action) => {
         case DELETE_ORDERS_FAILURE:
             return {
                 ...state,
-                loading: false,
+                isloading: false,
                 error: action.payload,
             };
         default:
