@@ -1,6 +1,6 @@
 An online B2C E-commerce platform is a digital marketplace where businesses sell products or services directly to individual consumers over the internet. It serves as a virtual storefront where customers can browse through a wide range of products, add items to their cart, securely complete transactions, and manage their orders.
 
-. Key Features : 
+. Key Features :
 
  --> Responsive Design: The website is designed to adapt seamlessly to various screen sizes and resolutions, ensuring a consistent and user-friendly experience across desktops, tablets, and smartphones.
 
